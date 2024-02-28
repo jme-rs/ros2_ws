@@ -4,6 +4,8 @@ from std_msgs.msg import String
 
 import speech_recognition as sr  # speech_recognitionモジュールにsrという名前を付ける．
 
+from nav2_action_send import nav2init, nav2goal
+
 
 def main():
     r = sr.Recognizer()  # Recognizerクラスのインスタンスを生成
@@ -11,6 +13,8 @@ def main():
 
     rclpy.init()  # 2. ROS2化：ノード
     node = Node("speech_recog")  # 2. ROS2化：ノード
+
+    nav2init()
 
     try:
         print("A moment of silence, please...")
