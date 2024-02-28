@@ -37,14 +37,23 @@ def main():
                     # we need some special handling here to correctly print unicode characters to standard output
 
                     target_word = str(value).split(" ")
-                    if target_word[0] == "しんくま":
-                        msg = target_word[1]
-                        pub_msg.data = msg
+                    # if target_word[0] == "しんくま":
+                    #     msg = target_word[1]
+                    #     pub_msg.data = msg
 
-                        result_pub.publish(pub_msg)  # 3. ROS2化：パブリッシャ関連
+                    #     result_pub.publish(pub_msg)  # 3. ROS2化：パブリッシャ関連
 
-                    else:
+                    # else:
+                    #     msg = "My name is Shinkuma"
+
+                    if str(value).find("しんくま") == -1:
                         msg = "My name is Shinkuma"
+                    else:
+                        index_of_shinkuma = target_word.index("しんくま")
+                        msg = target_word[index_of_shinkuma + 1]
+
+                        pub_msg.data = msg
+                        result_pub.publish(pub_msg)  # 3. ROS2化：パブリッシャ関連
 
                     if (
                         str is bytes
