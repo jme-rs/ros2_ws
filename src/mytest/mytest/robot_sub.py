@@ -14,7 +14,7 @@ class TrialSub(Node):
     def sub_callback(self, msg):
         self.get_logger().info("Received: {}".format(msg))
         if msg.data == "右":
-            nav2_action_send.nav2goal(5, 0)
+            nav2_action_send.nav2goal(3, 0)
 
 
 def main(args=None):
