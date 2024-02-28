@@ -26,6 +26,7 @@ setup(
             "pub_node = mytest.trial_pub:main",
             "sub_node = mytest.trial_sub:main",
             "pub_audio = mytest.audio:main",
+            "sub_robot = mytest.robot_sub:main",
         ],
     },
 )

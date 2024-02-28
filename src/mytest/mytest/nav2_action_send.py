@@ -28,7 +28,7 @@ Navigates a robot from an initial pose to a goal pose.
 """
 
 
-def nav2init(x, y):
+def nav2init():
 
     # Start the ROS 2 Python Client Library
     rclpy.init()
