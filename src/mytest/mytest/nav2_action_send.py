@@ -15,10 +15,10 @@
 #
 # Modified by AutomaticAddison.com
 
-import time  # Time library
+# import time  # Time library
 
 from geometry_msgs.msg import PoseStamped  # Pose with ref frame and timestamp
-from rclpy.duration import Duration  # Handles time for ROS 2
+# from rclpy.duration import Duration  # Handles time for ROS 2
 import rclpy  # Python client library for ROS 2
 
 from nav2_simple_commander.robot_navigator import BasicNavigator  # Helper module
