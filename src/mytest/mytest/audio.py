@@ -46,10 +46,10 @@ def main():
                     # else:
                     #     msg = "My name is Shinkuma"
 
-                    if str(value).find("しんくま") == -1:
+                    if str(value).find("くまさん") == -1:
                         msg = "My name is Shinkuma"
                     else:
-                        index_of_shinkuma = target_word.index("しんくま")
+                        index_of_shinkuma = target_word.index("くまさん")
                         msg = target_word[index_of_shinkuma + 1]
 
                         pub_msg.data = msg
