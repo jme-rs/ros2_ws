@@ -25,6 +25,7 @@ setup(
         "console_scripts": [
             "pub_node = mytest.trial_pub:main",
             "sub_node = mytest.trial_sub:main",
+            "pub_audio = mytest.audio:main",
         ],
     },
 )
