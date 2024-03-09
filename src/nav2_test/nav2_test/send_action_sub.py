@@ -13,11 +13,18 @@ class SendActionSub(Node):
 
     def sub_callback(self, msg):
         self.get_logger().info("Received: {}".format(msg))
-        send_goal_pose(0.0, 1.0)
+        data = msg.data
+        if data == "a":
+            send_goal_pose(0.0, 1.0)
+        elif data == "b":
+            send_goal_pose(1.0, 0.0)
+        elif data == "c":
+            send_goal_pose(2.0, 0.0)
+        else:
+            send_goal_pose(0.0, 0.0)
 
 
 def send_initial_pose():
-    rclpy.init()
     navigator = BasicNavigator()
     initial_pose = PoseStamped()
     initial_pose.header.frame_id = "map"
@@ -36,7 +43,6 @@ def send_initial_pose():
 
 
 def send_goal_pose(x, y):
-    rclpy.init()
     navigator = BasicNavigator()
     goal_pose = PoseStamped()
     goal_pose.header.frame_id = "map"
@@ -48,7 +54,7 @@ def send_goal_pose(x, y):
     goal_pose.pose.orientation.y = 0.0
     goal_pose.pose.orientation.z = 0.0
     goal_pose.pose.orientation.w = 1.0
-    navigator.setGoalPose(goal_pose)
+    navigator.goToPose(goal_pose)
 
     # rclpy.spin_once(navigator)
     navigator.waitUntilNav2Active()
