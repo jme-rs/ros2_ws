@@ -1,0 +1,11 @@
+[package]
+name = "r2r_minimal_action_client"
+version = "0.1.0"
+authors = ["Takumi Okamoto <takumi1988okamoto@gmail.com>"]
+edition = "2021"
+
+[dependencies]
+r2r = "0.8.3"
+futures = "0.3.15"
+tokio = { version = "1", features = ["full"] }
+rand = "0.8.5"
