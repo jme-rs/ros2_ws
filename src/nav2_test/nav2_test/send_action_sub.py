@@ -14,11 +14,11 @@ class SendActionSub(Node):
     def sub_callback(self, msg):
         self.get_logger().info("Received: {}".format(msg))
         data = msg.data
-        if data == "a":
+        if data == "p1":
             send_goal_pose(0.0, 1.0)
-        elif data == "b":
+        elif data == "p2":
             send_goal_pose(1.0, 0.0)
-        elif data == "c":
+        elif data == "p3":
             send_goal_pose(2.0, 0.0)
         else:
             send_goal_pose(0.0, 0.0)
