@@ -1,6 +1,6 @@
 import rclpy
 import cv2
-from .camera_node import CameraNode, FrameNotAvailableError
+from .camera_node import CameraNode
 
 
 def main():
@@ -16,11 +16,8 @@ def main():
         rclpy.init()
         camera_node = CameraNode(capture)
         rclpy.spin(camera_node)
-    except FrameNotAvailableError as e:
-        print(e)
     except Exception as e:
         print(e)
-
     finally:
         capture.release()
         camera_node.destroy_node()
