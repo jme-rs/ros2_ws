@@ -1,0 +1,5 @@
+<?xml version='1.0' ?>
+<launch>
+    <node pkg="mytest" exec="pub_node" output="screen"></node>
+    <node pkg="mytest" exec="sub_node" output="screen"></node>
+</launch>
