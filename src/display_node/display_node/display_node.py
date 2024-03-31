@@ -7,7 +7,7 @@ import cv2
 class DisplayNode(Node):
     def __init__(self, topic_name: str = 'camera'):
         super().__init__('display_node')
-        self.subscription = self.create_subscription(
+        self._subscription = self.create_subscription(
             Image,
             topic_name,
             self._listener_callback,
