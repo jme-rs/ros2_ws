@@ -20,7 +20,7 @@ class CameraNode(Node):
         super().__init__('camera_node')
         self._capture   = capture
         self._publisher = self.create_publisher(Image, topic_name, 10)
-        self.timer      = self.create_timer(publish_rate, self._timer_callback)
+        self._timer     = self.create_timer(publish_rate, self._timer_callback)
         self._cv_bridge = CvBridge()
 
     def _timer_callback(self):
